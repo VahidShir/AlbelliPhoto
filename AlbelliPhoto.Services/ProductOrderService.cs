@@ -10,7 +10,7 @@ using System.Text.Json;
 
 namespace AlbelliPhoto.Services
 {
-    public class ProductOrderService : IProductOrderService
+    internal class ProductOrderService : IProductOrderService
     {
         private readonly IOrdersRepository ordersRepository;
         private readonly IOrderWidthCalculator orderWidthCalculator;

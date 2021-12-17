@@ -12,9 +12,6 @@ namespace AlbelliPhoto.Data.Configurations
             builder.ToTable("Orders");
 
             builder.HasKey(x => new { x.OrderId });
-            //builder.Property(x => new { x.OrderItems });
-
-            //builder.Property(p => p.OrderItems);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using AlbelliPhoto.Abstraction;
 using AlbelliPhoto.Dto;
 
-namespace AlbelliPhoto.Services
+namespace AlbelliPhoto.Abstraction
 {
     public interface IProductFactory
     {
