@@ -3,15 +3,22 @@ using AlbelliPhoto.Services;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
-namespace AlbelliPhoto.Server
+namespace AlbelliPhoto
 {
     public class Startup
     {
@@ -29,8 +36,8 @@ namespace AlbelliPhoto.Server
 
             services.AddProductServices();
 
-            services.AddControllers()
-                .AddJsonOptions(opts =>
+            services.AddControllers().
+                AddJsonOptions(opts =>
                 {
                     var enumConverter = new JsonStringEnumConverter();
                     opts.JsonSerializerOptions.Converters.Add(enumConverter);
@@ -38,7 +45,7 @@ namespace AlbelliPhoto.Server
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AlbelliPhoto.Server", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AlbelliPhoto", Version = "v1" });
             });
         }
 
@@ -49,7 +56,7 @@ namespace AlbelliPhoto.Server
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AlbelliPhoto.Server v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AlbelliPhoto v1"));
             }
 
             app.UseHttpsRedirection();

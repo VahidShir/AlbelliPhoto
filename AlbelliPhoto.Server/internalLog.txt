@@ -1,0 +1,30 @@
+2021-12-17 23:32:16.4650 Info Message Template Auto Format enabled
+2021-12-17 23:32:16.4650 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-17 23:32:16.5057 Info Adding target FileTarget(Name=alldata)
+2021-12-17 23:32:16.5108 Info Adding target FileTarget(Name=otherFile-web)
+2021-12-17 23:32:16.5329 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=C:\AlbelliPhoto\AlbelliPhoto.Server\bin\Debug\net5.0\nlog.config
+2021-12-17 23:34:11.1003 Info Message Template Auto Format enabled
+2021-12-17 23:34:11.1102 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-17 23:34:11.1405 Info Adding target FileTarget(Name=alldata)
+2021-12-17 23:34:11.1405 Info Adding target FileTarget(Name=otherFile-web)
+2021-12-17 23:34:11.1714 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=C:\AlbelliPhoto\AlbelliPhoto.Server\bin\Debug\net5.0\nlog.config
+2021-12-17 23:37:03.2214 Info Message Template Auto Format enabled
+2021-12-17 23:37:03.2310 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-17 23:37:03.2599 Info Adding target FileTarget(Name=alldata)
+2021-12-17 23:37:03.2599 Info Adding target FileTarget(Name=otherFile-web)
+2021-12-17 23:37:03.2854 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=C:\AlbelliPhoto\AlbelliPhoto.Server\bin\Debug\net5.0\nlog.config
+2021-12-17 23:37:57.6184 Info Message Template Auto Format enabled
+2021-12-17 23:37:57.6277 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-17 23:37:57.6555 Info Adding target FileTarget(Name=alldata)
+2021-12-17 23:37:57.6555 Info Adding target FileTarget(Name=otherFile-web)
+2021-12-17 23:37:57.6817 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=C:\AlbelliPhoto\AlbelliPhoto.Server\bin\Debug\net5.0\nlog.config
+2021-12-17 23:38:45.8500 Info Message Template Auto Format enabled
+2021-12-17 23:38:45.8662 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-17 23:38:45.8942 Info Adding target FileTarget(Name=alldata)
+2021-12-17 23:38:45.9102 Info Adding target FileTarget(Name=otherFile-web)
+2021-12-17 23:38:45.9314 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=C:\AlbelliPhoto\AlbelliPhoto.Server\bin\Debug\net5.0\nlog.config
+2021-12-17 23:39:14.2166 Info Message Template Auto Format enabled
+2021-12-17 23:39:14.2166 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-17 23:39:14.2539 Info Adding target FileTarget(Name=alldata)
+2021-12-17 23:39:14.2628 Info Adding target FileTarget(Name=otherFile-web)
+2021-12-17 23:39:14.2840 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=C:\AlbelliPhoto\AlbelliPhoto.Server\bin\Debug\net5.0\nlog.config

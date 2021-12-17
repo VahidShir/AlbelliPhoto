@@ -12,29 +12,33 @@ namespace AlbelliPhoto.Services
 {
     public class ProductOrderService : IProductOrderService
     {
+        private readonly IOrdersRepository ordersRepository;
         private readonly IOrderWidthCalculator orderWidthCalculator;
         private readonly ILogger<ProductOrderService> logger;
 
-        public ProductOrderService(IOrderWidthCalculator orderWidthCalculator, ILogger<ProductOrderService> logger)
+        public ProductOrderService(IOrdersRepository ordersRepository, IOrderWidthCalculator orderWidthCalculator, ILogger<ProductOrderService> logger)
         {
+            this.ordersRepository = ordersRepository;
             this.orderWidthCalculator = orderWidthCalculator;
             this.logger = logger;
         }
 
         public PlaceOrderResponse PlaceOrder(PlaceOrderRequest request)
         {
+            logger.LogTrace("Order process started...!");
 
+            logger.LogDebug($"Request content {JsonSerializer.Serialize(request)}");
 
-            //use autofactor
+            //We could use some third-party libraries such as AutoMapper to convert DTOs to entities and vice-versa in whole solution,
+            // But for simplicity we didn't.
             var order = new Order
             {
-                //OrderId = request.OrderId,
                 OrderItems = request.OrderItems.Select(o => new OrderItem { ProductType = o.ProductType ?? ProductType.Calendar, Quantity = o.Quantity }).ToList()
             };
 
             try
             {
-                int orderId = 0;
+                int orderId = ordersRepository.PlaceOrder(order);
 
                 var response = new PlaceOrderResponse
                 {
@@ -43,31 +47,29 @@ namespace AlbelliPhoto.Services
                     AlbelliPhotoStatusCode = 0
                 };
 
+                logger.LogWarning("Successfully registered the order.");
+
                 return response;
             }
             catch (Exception exception)
             {
+                logger.LogWarning("Failed register your order!", exception);
+
                 return new PlaceOrderResponse
                 {
                     Message = "Failed register your order!",
                     AlbelliPhotoStatusCode = 0
                 };
-                //log
             }
         }
 
         public GetOrderResponse GetOrder(GetOrderRequest request)
         {
-            logger.LogTrace("Order process started...!");
-
             logger.LogDebug($"Request content {JsonSerializer.Serialize(request)}");
 
             try
             {
-                var order = new Order
-                {
-                    OrderItems = new()
-                };
+                var order = ordersRepository.GetOrder(request.OrderId);
 
                 if (order is null)
                     return null;
@@ -87,7 +89,7 @@ namespace AlbelliPhoto.Services
             }
             catch (Exception exception)
             {
-                logger.LogWarning($"Failed to fetch requested order with id: {request.OrderId}");
+                logger.LogWarning($"Failed to fetch requested order with id: {request.OrderId}", exception);
 
                 return null;
             }

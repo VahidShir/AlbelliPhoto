@@ -1,10 +1,11 @@
-using AlbelliPhoto.Abstraction;
+﻿using AlbelliPhoto.Abstraction;
 using AlbelliPhoto.Dto;
 using AlbelliPhoto.Services;
 
 using Microsoft.AspNetCore.Mvc;
 
 using System.Collections.Generic;
+using System.Net;
 
 namespace AlbelliPhoto.Server.Controllers
 {
@@ -12,43 +13,36 @@ namespace AlbelliPhoto.Server.Controllers
     [Route("Products/[controller]")]
     public class OrderController : ControllerBase
     {
-        private readonly IProductFactory productFactory;
+        private readonly IProductOrderService productOrderService;
 
-        public OrderController(IProductFactory productFactory)
+        public OrderController(IProductOrderService productOrderService)
         {
-            this.productFactory = productFactory;
+            this.productOrderService = productOrderService;
         }
 
         [HttpGet("{OrderId}")]
-        public GetOrderResponse GetOrder([FromRoute] GetOrderRequest request)
+        public IActionResult GetOrder([FromRoute] GetOrderRequest request)
         {
-            var test = productFactory.GetProduct(ProductType.Calendar);
+            GetOrderResponse response = productOrderService.GetOrder(request);
 
-            var sampleResponse = new GetOrderResponse
-            {
-                RequiredBinWidth = 1,
-                OrderItems = new List<OrderItemDto>()
-                {
-                    new OrderItemDto{ ProductType = ProductType.Calendar, Quantity = 1},
-                    new OrderItemDto{ ProductType = ProductType.Mug, Quantity = 3},
-                    new OrderItemDto{ ProductType = ProductType.Canvas, Quantity = 1},
-                    new OrderItemDto{ ProductType = ProductType.Cards, Quantity = 2}
-                }
-            };
+            if (response is null)
+                return NotFound($"Thr order with the id:{request.OrderId} was not found");
 
-            return sampleResponse;
+            return Ok(response);
         }
 
         [HttpPost()]
-        public PlaceOrderResponse PlaceOrder(PlaceOrderRequest request)
+        public IActionResult PlaceOrder(PlaceOrderRequest request)
         {
-            var sampleResponse = new PlaceOrderResponse
-            {
-                OrderId = 5,
-                Message = "Successfully placed your order."
-            };
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            return sampleResponse;
+            PlaceOrderResponse response = productOrderService.PlaceOrder(request);
+
+            if (response.AlbelliPhotoStatusCode != 0)
+                return StatusCode((int)HttpStatusCode.InternalServerError, response);
+
+            return Ok(response);
         }
     }
 }
