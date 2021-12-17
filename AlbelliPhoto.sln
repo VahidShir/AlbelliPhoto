@@ -5,6 +5,16 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbelliPhoto.Server", "AlbelliPhoto.Server\AlbelliPhoto.Server.csproj", "{70A60320-ECF8-412B-A481-36A6C5B3A005}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbelliPhoto.Abstraction", "AlbelliPhoto.Abstraction\AlbelliPhoto.Abstraction.csproj", "{9252230F-1B21-4EC8-9452-0F6CCC0716A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbelliPhoto.Data", "AlbelliPhoto.Data\AlbelliPhoto.Data.csproj", "{1F71D05D-9385-4D6D-B734-9F55595CF5FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbelliPhoto.Dto", "AlbelliPhoto.Dto\AlbelliPhoto.Dto.csproj", "{ED853758-2401-4CA8-A08A-750CEE440A0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbelliPhoto.Services", "AlbelliPhoto.Services\AlbelliPhoto.Services.csproj", "{2E443124-9DF2-4F1C-8A16-9F0FBD8F9B1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbelliPhoto.Tests", "AlbelliPhoto.Tests\AlbelliPhoto.Tests.csproj", "{5E183F9E-7490-47A2-B5F8-E9314830CD87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{70A60320-ECF8-412B-A481-36A6C5B3A005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70A60320-ECF8-412B-A481-36A6C5B3A005}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70A60320-ECF8-412B-A481-36A6C5B3A005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9252230F-1B21-4EC8-9452-0F6CCC0716A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9252230F-1B21-4EC8-9452-0F6CCC0716A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9252230F-1B21-4EC8-9452-0F6CCC0716A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9252230F-1B21-4EC8-9452-0F6CCC0716A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F71D05D-9385-4D6D-B734-9F55595CF5FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F71D05D-9385-4D6D-B734-9F55595CF5FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F71D05D-9385-4D6D-B734-9F55595CF5FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F71D05D-9385-4D6D-B734-9F55595CF5FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED853758-2401-4CA8-A08A-750CEE440A0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED853758-2401-4CA8-A08A-750CEE440A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED853758-2401-4CA8-A08A-750CEE440A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED853758-2401-4CA8-A08A-750CEE440A0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E443124-9DF2-4F1C-8A16-9F0FBD8F9B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E443124-9DF2-4F1C-8A16-9F0FBD8F9B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E443124-9DF2-4F1C-8A16-9F0FBD8F9B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E443124-9DF2-4F1C-8A16-9F0FBD8F9B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E183F9E-7490-47A2-B5F8-E9314830CD87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E183F9E-7490-47A2-B5F8-E9314830CD87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E183F9E-7490-47A2-B5F8-E9314830CD87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E183F9E-7490-47A2-B5F8-E9314830CD87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
