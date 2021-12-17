@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AlbelliPhoto.Data\AlbelliPhoto.Data.csproj" />
     <ProjectReference Include="..\AlbelliPhoto.Services\AlbelliPhoto.Services.csproj" />
   </ItemGroup>
 
