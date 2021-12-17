@@ -12,7 +12,7 @@ namespace AlbelliPhoto.Abstraction.Entities
 
         public int Quantity { get; set; }
 
-        public Order Order { get; set; }
+        //public Order Order { get; set; }
 
         public override string ToString()
         {
